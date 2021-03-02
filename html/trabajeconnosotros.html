@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documento de practica</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="imagen-header"></div>
+
+      <div class="barra">
+        <div class="container logo-nav-container">
+          <a href="#" class="logo"
+            >LOGO
+            <!--<img class="logoimg" src="Img/black-circle-and-white-mountain.png" alt=""> --></a
+          >
+          <nav class="navigation">
+            <ul>
+              <li><a href="../index.html">Inicio</a></li>  
+              <li><a href="../html/destinos.html">Destinos</a></li>
+              <li><a href="../html/paquetes.html">Paquetes</a></li>
+              <li><a href="../html/convenios.html">Convenios</a></li>
+              <li><a href="../html/Sucursales.html">Sucursales</a></li>
+              <li><a href="../html/contactenos.html">Contactenos</a></li>
+              <li><a href="../html/Login.html">Login</a></li>
+              <li id="sesion"></li>
+              <li><button class="iniciar2" onclick="cerrarSesion()">Cerrar Sesion</button></li>
+              
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <h1 class="titulo">Trabaje con Nosotros</h1>
+
+        <p>Si quiere trabajar con nosotros por favor dejenos sus datos para que podemos contactarlo con fines laborales</p>
+
+        <form class="formulario">
+
+            <h3>Favor ingrese sus datos para que podamos contactarlo</h3>
+  
+            <input
+              class="controls"
+              type="text"
+              name="nombre"
+              id="nombre1"
+              placeholder="Ingrese su Primer Nombre"
+            />
+  
+            <label for=""></label>
+  
+            <input
+              class="controls"
+              type="text"
+              name="nombre"
+              id="nombre2"
+              placeholder="Ingrese su Segundo Nombre"
+            />
+  
+            <input
+              class="controls"
+              type="text"
+              name="apellido1"
+              id="apellido1"
+              placeholder="Ingrese su Primer Apellido"
+            />
+  
+            <label for=""></label>
+  
+
+            <input
+              class="controls"
+              type="text"
+              name="apellido2"
+              id="apellido2"
+              placeholder="Ingrese su Segundo Apellido"
+            />
+  
+
+            <input
+            class="controls"
+            type="text"
+            name="cedula"
+            id="cedula"
+            placeholder="Ingrese su cedula"
+            pattern="[0-9]+"
+            />
+            
+            <label for=""></label>
+
+            <input
+              class="controls"
+              type="email"
+              name="correo"
+              id="correo"
+              placeholder="Ingrese su Correo"
+            />  
+
+            <select class="selects" name="nivel" id="nivel">
+                <option value="Elegir">Elegir Nivel Academico</option>
+                <option value="Bachiller">Bachiller</option>
+                <option value="Tecnico Laboral">Tecnico Laboral</option>
+                <option value="Tecnico Profesional">Tecnico Profesional</option>
+                <option value="Tecnologo">Tecnologo</option>
+                <option value="Profesional Universitario">Profesional Universitario</option>
+                <option value="Especializacion">Especializacion en su area</option>
+                <option value="Maestria">Maestria</option>
+                <option value="Doctorado">Doctorado</option>
+            </select>
+
+
+            <p></p>
+
+            <label class="titulotex" for="">Favor coloque su nivel academico</label>
+
+            <textarea name="area" id="area" cols="30" rows="10"></textarea>
+
+            <div>
+                <button class="botons" onclick="validarFormulario()">Enviar</button>
+            </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container-footer-all">
+        <div class="container-body">
+          <div class="column1">
+            <h1>Mas informacion de la agencia</h1>
+            <p>
+              Esta agencia se dedica a la promocion y venta de paquetes de
+              sitios turisticos a diferentes destinos ubicados en colombia y en
+              el mundo, tenemos convenios con diferentes hoteles en los destinos
+              que ofrecemos.
+            </p>
+          </div>
+
+          <div class="column2">
+            <h1>Redes Sociales</h1>
+
+            <div class="row">
+              <img src="../icon/facebook.png" />
+              <label>Siguenos en Facebook</label>
+            </div>
+
+            <div class="row">
+              <img src="../icon/twitter.png" />
+              <label>Siguenos en Twiter</label>
+            </div>
+
+            <div class="row">
+              <img src="../icon/instagram.png" />
+              <label>Siguenos en Instagram</label>
+            </div>
+
+            <div class="row">
+              <img src="../icon/pinterest.png" />
+              <label>Siguenos en Pinterest</label>
+            </div>
+          </div>
+
+          <div class="column3">
+            <h1>Informacion Contactos</h1>
+
+            <div class="row2">
+              <img src="../icon/house.png" />
+              <label>Direccion de prueba en Barranquilla</label>
+            </div>
+
+            <div class="row2">
+              <img src="../icon/smartphone.png" />
+              <label>+57 3215546687</label>
+            </div>
+
+            <div class="row2">
+              <img src="../icon/contact.png" />
+              <label>SitiosTuristicos@Hotmail.com</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-footer">
+          <div class="copyright">
+            © 2021 Todos los derechos resevados| <a href="">Juls</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

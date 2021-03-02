@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="imagen-header"></div>
+
+      <div class="barra">
+        <div class="container logo-nav-container">
+          <a href="#" class="logo"
+            >LOGO
+            <!--<img class="logoimg" src="Img/black-circle-and-white-mountain.png" alt=""> --></a
+          >
+          <nav class="navigation">
+            <ul>
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="../html/destinos.html">Destinos</a></li>
+              <li><a href="../html/paquetes.html">Paquetes</a></li>
+              <li><a href="../html/convenios.html">Convenios</a></li>
+              <li><a href="../html/gui.html">GUI</a></li>
+              <li><a href="../html/sucursales.html">Sucursales</a></li>
+              <li><a href="../html/trabajeconnosotros.html">Trabaje con Nosotros</a></li>
+              <li><a href="../html/contactenos.html">Contactenos</a></li>
+              <li id="sesion"></li>
+              <li><button class="iniciar2" onclick="cerrarSesion()">Cerrar Sesion</button></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+
+        <form id="formulario">
+
+            <div class="login">
+
+                <h1>Iniciar Sesion</h1>
+    
+                <div class="grupo">
+                    <label for="">Usuario</label>
+                    <input type="text" id="Username" placeholder="Ingresar usuario">
+                </div>
+    
+                <div class="grupo">
+                    <label for="">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingresar contraseña">
+                
+                </div>
+                
+                <div class="grupo">
+                    <button class="iniciar" onclick="loginJSON()">Iniciar Sesion</button>
+                </div>
+    
+            </div>
+        </form>
+        
+
+
+    </main>
+
+
+
+    <footer class="footer">
+      <div class="container-footer-all">
+        <div class="container-body">
+          <div class="column1">
+            <h1>Mas informacion de la agencia</h1>
+            <p>
+              Esta agencia se dedica a la promocion y venta de paquetes de
+              sitios turisticos a diferentes destinos ubicados en colombia y en
+              el mundo, tenemos convenios con diferentes hoteles en los destinos
+              que ofrecemos.
+            </p>
+          </div>
+
+          <div class="column2">
+            <h1>Redes Sociales</h1>
+
+            <div class="row">
+              <img src="../icon/facebook.png" />
+              <label>Siguenos en Facebook</label>
+            </div>
+
+            <div class="row">
+              <img src="../icon/twitter.png" />
+              <label>Siguenos en Twiter</label>
+            </div>
+
+            <div class="row">
+              <img src="../icon/instagram.png" />
+              <label>Siguenos en Instagram</label>
+            </div>
+
+            <div class="row">
+              <img src="../icon/pinterest.png" />
+              <label>Siguenos en Pinterest</label>
+            </div>
+          </div>
+
+          <div class="column3">
+            <h1>Informacion Contactos</h1>
+
+            <div class="row2">
+              <img src="../icon/house.png" />
+              <label>Direccion de prueba en Barranquilla</label>
+            </div>
+
+            <div class="row2">
+              <img src="../icon/smartphone.png" />
+              <label>+57 3215546687</label>
+            </div>
+
+            <div class="row2">
+              <img src="../icon/contact.png" />
+              <label>SitiosTuristicos@Hotmail.com</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-footer">
+          <div class="copyright">
+            © 2021 Todos los derechos resevados| <a href="">Juls</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

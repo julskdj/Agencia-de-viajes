@@ -1,0 +1,30 @@
+[
+    {
+        "usuario": "Juls",
+        "contraseña": "Zte225",
+        "nombre": "Julio",
+        "apellido": "Donado",
+        "correo": "Julio22567@hotmail.com"
+    },
+    {
+        "usuario": "Dext",
+        "contraseña": "1244",
+        "nombre": "Jesus",
+        "apellido": "Donado",
+        "correo": "Jesus1244@hotmail.com"
+    },
+    {
+        "usuario": "Sile",
+        "contraseña": "febrero",
+        "nombre": "Silena",
+        "apellido": "Sanjuan",
+        "correo": "Silena@hotmail.com"
+    },
+    {
+        "usuario": "Majo",
+        "contraseña": "1234",
+        "nombre": "Maria",
+        "apellido": "Higgins",
+        "correo": "MajoHiggins@hotmail.com"
+    }
+]
