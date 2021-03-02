@@ -3,6 +3,7 @@ console.log("Conexion JavasCript Establecida");
 let indice = 0;
 var sesion;
 obtener = localStorage.getItem("Sesion");
+var probar = 0
 
 var array = [];
 
@@ -85,7 +86,7 @@ function validarFormulario() {
       alert("Falta colocar texto despues del arroba");
     } else {
       console.log("Correo valido");
-      
+
 
       let Tarea = {
         nombre1,
@@ -122,16 +123,62 @@ function deleteTarea(nom) {
   console.log(nom);
   let Lista = JSON.parse(localStorage.getItem("Lista"));
   for (let i = 0; i < Lista.length; i++) {
-    
+
+    let nombre1 = Lista[i].nombre1;
+    let nombre2 = Lista[i].nombre2;
+    let apellido1 = Lista[i].apellido1;
+    let apellido2 = Lista[i].apellido2;
+    let nombrecompleto = `${nombre1} ${nombre2} ${apellido1} ${apellido2}`
+
+    if (nombrecompleto == nom) {
+      Lista.splice(i, 1);
+    }
+  }
+
+  localStorage.setItem("Lista", JSON.stringify(Lista));
+  getLista();
+}
+
+function editar(nom) {
+  console.log(nom);
+  let Lista = JSON.parse(localStorage.getItem("Lista"));
+  for (let i = 0; i < Lista.length; i++) {
+
     let nombre1 = Lista[i].nombre1;
     let nombre2 = Lista[i].nombre2;
     let apellido1 = Lista[i].apellido1;
     let apellido2 = Lista[i].apellido2;
     let nombrecompleto = `${nombre1} ${nombre2} ${apellido1} ${apellido2}`
     
-    if (nombrecompleto == nom) {
-      Lista.splice(i, 1);
+    if (nombrecompleto == nom && probar == 0) {
+
+      let name = document.getElementById("nombre1").value;
+      let name2 = document.getElementById("nombre2").value;
+      let lastname = document.getElementById("apellido1").value;
+      let lastname2 = document.getElementById("apellido2").value;
+      let email = document.getElementById("correo").value;
+      let selccionar = document.getElementById("selects").value;
+      let city = document.getElementById("ciudad").value;
+      let tel = document.getElementById("telefono").value;
+      let dir = document.getElementById("direccion").value;
+      let code = document.getElementById("codigopostal").value;
+      let dest = document.getElementById("destino").value;
+
+      Lista[i].nombre1 = name
+      Lista[i].nombre2 = name2
+      Lista[i].apellido1 = lastname
+      Lista[i].apellido2 = lastname2
+      Lista[i].correo = email
+      Lista[i].select = selccionar
+      Lista[i].ciudad = city
+      Lista[i].telefono = tel
+      Lista[i].direccion = dir
+      Lista[i].codigopostal = code
+      Lista[i].destino = dest
+      probar = 1
+      console.log(probar)
     }
+    probar = 0
   }
 
   localStorage.setItem("Lista", JSON.stringify(Lista));
@@ -176,7 +223,7 @@ function getLista() {
             <th>${direccion}</th>
             <th>${codigopostal}</th>
             <th>${destino}</th>
-            <th><button onclick="deleteTarea('${nombrecompleto}')" >Eliminar</button><br><button>Editar</button></th>
+            <th><button onclick="deleteTarea('${nombrecompleto}')" >Eliminar</button><br><button onclick="editar('${nombrecompleto}')">Editar</button></th>
 
             </tr>
          

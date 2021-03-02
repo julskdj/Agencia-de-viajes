@@ -26,5 +26,19 @@
         "nombre": "Maria",
         "apellido": "Higgins",
         "correo": "MajoHiggins@hotmail.com"
+    },
+    {
+        "usuario": "Evelyn",
+        "contraseña": "1234",
+        "nombre": "Evelyn",
+        "apellido": "Cerro",
+        "correo": "Ecerro@hotmail.com"
+    },
+    {
+        "usuario": "User",
+        "contraseña": "1234",
+        "nombre": "Usuario",
+        "apellido": "Generico",
+        "correo": "generic@hotmail.com"
     }
 ]
