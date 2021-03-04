@@ -1,38 +1,35 @@
 console.log("Conexion JavasCript Establecida");
 
-let indice = 0;
-var sesion;
-obtener = localStorage.getItem("Sesion");
+var temporal
+var obtener = localStorage.getItem("Sesion");
 var probar = 0
 
-var array = [];
+botonlogout();
+getLista();
+inicio();
 
-if (obtener == "") {
-} else if (obtener == null) {
-} else {
-  document.getElementById("sesion").innerHTML = obtener;
+function direccionar() {
+  location.href = "../index.html"
 }
 
-function inicioSesion() {
-  let Username = document.getElementById("Username").value;
-  let password = document.getElementById("password").value;
-  const form = document.getElementById("formulario");
-
-  if (Username == "admin" && password == "123") {
-    alert("Inicio de sesion exitoso");
-    form.reset();
+function inicio(){
+  if (obtener == "") {
+  } else if (obtener == null) {
   } else {
-    alert("Datos invalidos");
+    temporal = obtener
+    obtener = `<a href="../html/usuario.html">${obtener}</a>`;
+    document.getElementById("sesion").innerHTML = obtener;
+  }
+  
+  if (document.getElementById("bienvenida1") != null) {
+    document.getElementById("bienvenida1").innerHTML = `Bienvenido ${temporal}`
   }
 }
 
-function cerrarSesion() {
-  document.getElementById("sesion").innerHTML = "";
-  localStorage.removeItem("Sesion");
-}
+  ///////////////////////////////////////////////////////////////////////////////////////////
 
 function validarFormulario() {
-  ///////////////////////////////////////////////////////////////////////////////
+
 
   let nombre1 = document.getElementById("nombre1").value;
   let nombre2 = document.getElementById("nombre2").value;
@@ -149,7 +146,7 @@ function editar(nom) {
     let apellido1 = Lista[i].apellido1;
     let apellido2 = Lista[i].apellido2;
     let nombrecompleto = `${nombre1} ${nombre2} ${apellido1} ${apellido2}`
-    
+
     if (nombrecompleto == nom && probar == 0) {
 
       let name = document.getElementById("nombre1").value;
@@ -179,6 +176,8 @@ function editar(nom) {
       console.log(probar)
     }
     probar = 0
+
+
   }
 
   localStorage.setItem("Lista", JSON.stringify(Lista));
@@ -188,7 +187,9 @@ function editar(nom) {
 function getLista() {
   let Lista = JSON.parse(localStorage.getItem("Lista"));
   let tasksView = document.getElementById("tabla5");
-  tasksView.innerHTML = ` <th>Nombre Completo</th>
+
+  if (document.getElementById("tabla5") != null) {
+    tasksView.innerHTML = ` <th>Nombre Completo</th>
                             <th>Correo</th>
                             <th>Pais de Nacimiento</th>
                             <th>Ciudad</th>
@@ -197,22 +198,22 @@ function getLista() {
                             <th>Codigo Postal</th>
                             <th>Destino de mayor interes</th>
                             <th>Opcion</th>`;
-  for (let i = 0; i < Lista.length; i++) {
-    let nombre1 = Lista[i].nombre1;
-    let nombre2 = Lista[i].nombre2;
-    let apellido1 = Lista[i].apellido1;
-    let apellido2 = Lista[i].apellido2;
-    let correo = Lista[i].correo;
-    let select = Lista[i].select;
-    let ciudad = Lista[i].ciudad;
-    let telefono = Lista[i].telefono;
-    let direccion = Lista[i].direccion;
-    let codigopostal = Lista[i].codigopostal;
-    let destino = Lista[i].destino;
+    for (let i = 0; i < Lista.length; i++) {
+      let nombre1 = Lista[i].nombre1;
+      let nombre2 = Lista[i].nombre2;
+      let apellido1 = Lista[i].apellido1;
+      let apellido2 = Lista[i].apellido2;
+      let correo = Lista[i].correo;
+      let select = Lista[i].select;
+      let ciudad = Lista[i].ciudad;
+      let telefono = Lista[i].telefono;
+      let direccion = Lista[i].direccion;
+      let codigopostal = Lista[i].codigopostal;
+      let destino = Lista[i].destino;
 
-    let nombrecompleto = `${nombre1} ${nombre2} ${apellido1} ${apellido2}`
+      let nombrecompleto = `${nombre1} ${nombre2} ${apellido1} ${apellido2}`
 
-    tasksView.innerHTML += `<table class="tabla5">
+      tasksView.innerHTML += `<table class="tabla5">
         
         <tr>
             <th>${nombrecompleto}</th>
@@ -228,10 +229,13 @@ function getLista() {
             </tr>
          
             </table>`;
+    }
+
+
   }
 }
 //<a href="#" onclick="deleteTarea('${title}')" class="btn btn-danger ml-5">Delete</a>
-getLista();
+
 
 /////////////////////////////////////////Fetch////////////////////////////////////////
 
@@ -239,7 +243,7 @@ function loginJSON() {
   let Username = document.getElementById("Username").value;
   let password = document.getElementById("password").value;
   let flag = null;
-
+  let sesion
   if ((password.length == 0) & (Username.length == 0)) {
     alert("Ambos campos vacios");
   } else if (Username.length == 0) {
@@ -255,10 +259,10 @@ function loginJSON() {
         data.forEach(function (validar) {
           if (validar.usuario == Username) {
             if (validar.contraseña == password) {
-              alert(`${validar.nombre} ${validar.apellido} ha Iniciado Sesion`);
               sesion = `${validar.nombre} ${validar.apellido}`;
               flag = true;
               localStorage.setItem("Sesion", sesion);
+              location.href = "../html/usuario.html"
             } else {
               alert("contraseña incorrecta");
               flag = true;
@@ -272,5 +276,53 @@ function loginJSON() {
       .catch(function (error) {
         alert(error);
       });
+  }
+}
+
+
+function cerrarSesion() {
+  document.getElementById("sesion").innerHTML = `<a href=""></a>`;
+  localStorage.removeItem("Sesion");
+  location.reload();
+}
+
+function cerrarSesionButton() {
+  document.getElementById("sesion").innerHTML = `<a href=""></a>`;
+  localStorage.removeItem("Sesion");
+  location.href= "../index.html";
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+/*
+
+function ocultar() {
+  
+  var ocult = document.getElementById("ocult");
+  ocult.style.display = "none";
+}
+
+function mostrar() {
+  ocult = document.getElementById("ocult");
+  ocult.style.display = "block"
+}
+
+*/
+function ocultarymostrar() {
+  let x = document.getElementById("Div");
+  if (x.style.display === "none") {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
+}
+
+function botonlogout() {
+  if (document.getElementById("logout") != null){
+    let boton = document.getElementById("logout")
+    if(obtener == null){
+      boton.style.display = "none"
+    }else{
+      boton.style.display = "block"
+    }
   }
 }

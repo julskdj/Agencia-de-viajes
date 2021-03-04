@@ -25,7 +25,7 @@
               <li><a href="../html/trabajeconnosotros.html">Trabaje con Nosotros</a></li>
               <li><a href="../html/login.html">Login</a></li>
               <li id="sesion"></li>
-              <li><button class="iniciar2" onclick="cerrarSesion()">Cerrar Sesion</button></li>
+              <li><button class="iniciar2" onclick="cerrarSesion()" id="logout">Cerrar Sesion</button></li>
             
             </ul>
           </nav>
@@ -452,13 +452,19 @@
         
         <div class="sucursalbackground2">
 
+          <button onclick="ocultarymostrar()" class="botons2">Ocultar/Mostrar</button>
+
             <h2 class="h22">Datos de personas</h2>
           
-          <table border="1" class="tabla5" id="tabla5">
+          <div id="Div">
+            <table border="1" class="tabla5" id="tabla5">
               
-            <th></th>  
+              <th></th>  
+  
+              </table>
+          </div>
 
-            </table>
+          
 
       </div>
 

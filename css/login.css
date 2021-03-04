@@ -36,6 +36,11 @@ th {
   padding: 5px 5px 5px 5px;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 .imagen-header {
   background: url(../Img/a6ec7b60fd9ea4394b264e94afacb0b4.jpg);
   padding: 0px;
@@ -97,7 +102,53 @@ th {
   border-radius: 10px;
 }
 
+#iniciar3 {
+  font-size: 18px;
+  padding: 15px 10px 10px 5px;
+  background: #676768;
+  display: block;
+  width: 70%;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+#iniciar4 {
+  font-size: 18px;
+  padding: 15px 10px 10px 5px;
+  background: #204d86;
+  display: block;
+  width: 70%;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
 /* /////////////// Login ////////////////////////*/
+
+#mensaje{
+  margin-top: 100px;
+  background: #202020;
+  padding: 10px 0;
+  padding-bottom: 50px;
+  box-shadow: 7px 13px 37px #000;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 10px;
+}
+
+#mensaje h1{
+  color: white;
+  padding-bottom: 20px;
+}
 
 form h1 {
   color: white;

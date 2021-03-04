@@ -308,6 +308,19 @@ h3 {
 
 }
 
+.botons2 {
+  width: 40%;
+  background: #204d86;
+  border: none;
+  padding: 12px;
+  color: black;
+  margin: 10px 0 20px;
+  margin-top: 1px;
+  font-size: 16px;
+  border-radius: 3px;
+
+}
+
 .formulario textarea{
   width: 35%;
   padding: 10px 235px;

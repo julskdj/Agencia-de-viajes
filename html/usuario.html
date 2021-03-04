@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documento de practica</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <title>Login</title>
   </head>
   <body>
     <header class="header">
@@ -23,11 +23,11 @@
               <li><a href="../html/destinos.html">Destinos</a></li>
               <li><a href="../html/paquetes.html">Paquetes</a></li>
               <li><a href="../html/convenios.html">Convenios</a></li>
+              <li><a href="../html/gui.html">GUI</a></li>
+              <li><a href="../html/sucursales.html">Sucursales</a></li>
               <li><a href="../html/trabajeconnosotros.html">Trabaje con Nosotros</a></li>
               <li><a href="../html/contactenos.html">Contactenos</a></li>
-              <li><a href="../html/login.html">Login</a></li>
-              <li id="sesion"></li>
-              <li><button class="iniciar2" onclick="cerrarSesion()" id="logout">Cerrar Sesion</button></li>
+              <li id="sesion"><a href=""></a></li>
               
             </ul>
           </nav>
@@ -35,64 +35,30 @@
       </div>
     </header>
 
-    <main class="main">
-      <div class="container">
-        <h1 class="titulosucursales">Sucursales</h1>
+    <main class="container">
 
-        <p>Estas son las siguientes sucursales con las que contamos actualmente:</p>
+        <div id="mensaje" method="post" action>
 
-        <div class="sucursalbackground">
+            <div class="login">
 
-            <table border="1" class="tabla4">
-                <caption>
-                  <h2>Lista de sucursales</h2>
-                </caption>
-                <tr>
-                  <th>Sucursal</th>
-                  <th>Direccion</th>
-                  <th>Telefono</th>
-                  <th>Horarios</th>
-                </tr>
-                <tr>
-                  <th>Barranquilla</th>
-                  <th>calle 15 # 94-76.</th>
-                  <th>+57 3215549484</th>
-                  <th>De 7am a 12pm y 2pm a 5pm</th>
-                </tr>
-                <tr>
-                  <th>Cartagena</th>
-                  <th>Calle 45 # 34-74</th>
-                  <th>+57 3149872479</th>
-                  <th>De 7am a 12pm y 2pm a 5pm</th>
-                </tr>
-                <tr>
-                  <th>Sincelejo</th>
-                  <th>Calle 23 # 45-78</th>
-                  <th>+57 3486549827</th>
-                  <th>De 8am a 12pm y 2pm a 6pm</th>
-                </tr>
-                <tr>
-                  <th>Medellin</th>
-                  <th>Calle 12 #34 comuna 13</th>
-                  <th>+57 3189742873</th>
-                  <th>De 7am a 12pm y 2pm a 5pm</th>
-                </tr>
-                <tr>
-                  <th>Bogota</th>
-                  <th>Carrera Septima # 45-80</th>
-                  <th>+57 3984576821</th>
-                  <th>De 6am a 12pm y 2pm a 5pm</th>
-                </tr>
-              </table>
+                <h1 id="bienvenida1">Iniciar Sesion</h1>
+     
+                
 
+                <div class="grupo">
+                    <button Id="iniciar3" onclick="direccionar()">Inicio</button>
+
+                    <button Id="iniciar4" onclick="cerrarSesionButton()">Cerrar Sesion</button>
+                </div>
+    
+            </div>
         </div>
-
         
 
-        
-        
-      </div>
+
     </main>
+
+
 
     <footer class="footer">
       <div class="container-footer-all">
@@ -159,5 +125,6 @@
       </div>
     </footer>
     <script src="../js/main.js"></script>
-  </body>
+</body>
+
 </html>
