@@ -292,12 +292,14 @@ function loginJSON() {
 function cerrarSesion() {
   document.getElementById("sesion").innerHTML = `<a href=""></a>`;
   localStorage.removeItem("Sesion");
+  localStorage.removeItem("rol")
   location.reload();
 }
 
 function cerrarSesionButton() {
   document.getElementById("sesion").innerHTML = `<a href=""></a>`;
   localStorage.removeItem("Sesion");
+  localStorage.removeItem("rol")
   location.href= "../index.html";
 }
 
