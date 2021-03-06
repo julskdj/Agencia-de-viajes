@@ -6,6 +6,7 @@ var probar = 0
 
 botonlogout();
 getLista();
+getListCotizar();
 inicio();
 
 function direccionar() {
@@ -324,5 +325,122 @@ function botonlogout() {
     }else{
       boton.style.display = "block"
     }
+  }
+}
+
+function validarFormCotizar() {
+
+
+  let dest = document.getElementById("dest").value;
+  let dateIni = document.getElementById("dateIni").value;
+  let dateFin = document.getElementById("dateFin").value;
+  let viajeros = document.getElementById("viajeros").value;
+  let vuelo = document.getElementById("vuelo").value;
+  let transporte = document.getElementById("transporte").value;
+  const PRECIODESTINO = 1500;
+  const PRECIOVUELO = 1000;
+  const PRECIOTRANS = 200;
+  let valor_vuelo = viajeros * PRECIOVUELO;
+  let valor_transporte = viajeros * PRECIOTRANS
+  let total = PRECIODESTINO + valor_vuelo + valor_transporte;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  if (dest == "Elegir-dest") {
+    alert("Favor escoja una opcion distinta de elegir");
+  } else if (dateIni.length == 0) {
+    alert("No has escrito la fecha del viajes");
+  } else if (dateFin.length == 0) {
+    alert("No has escrito la fecha del retorno");
+  } else if (viajeros.length == 0) {
+    alert("No has escrito la cantidad de pasajeros");
+  } else if (vuelo == "Elegir-vue") {
+    alert("Favor escoja una opcion distinta de elegir");
+  } else if (transporte == "Elegir-trans") {
+    alert("Favor escoja una opcion distinta de elegir");
+  } else {
+    let TareaCoti = {
+      dest,
+      dateIni,
+      dateFin,
+      viajeros,
+      vuelo,
+      transporte,
+      PRECIODESTINO,
+      PRECIOVUELO,
+      PRECIOTRANS,
+      valor_vuelo,
+      valor_transporte,
+      total,
+    };
+
+    if (localStorage.getItem("ListaCoti") === null) {
+      let ListaCoti = [];
+      ListaCoti.push(TareaCoti);
+      localStorage.setItem("ListaCoti", JSON.stringify(ListaCoti));
+    } else {
+      let ListaCoti = JSON.parse(localStorage.getItem("ListaCoti"));
+      ListaCoti.push(TareaCoti);
+      localStorage.setItem("ListaCoti", JSON.stringify(ListaCoti));
+    }
+
+    getListCotizar();
+    document.getElementById("formulario-cotizar").reset();
+    e.preventDefault();
+  }
+}
+
+function getListCotizar() {
+  let ListaCoti = JSON.parse(localStorage.getItem("ListaCoti"));
+  let tasksView = document.getElementById("tabla6");
+
+  if (document.getElementById("tabla6") != null) {
+    tasksView.innerHTML = ` <th>Ciudad destino</th>
+                            <th>Fecha inicio</th>
+                            <th>Fecha fin</th>
+                            <th>Viajeros</th>
+                            <th>Vuelos</th>
+                            <th>Transporte</th>
+                            <th>Precio destino</th>
+                            <th>Precio vuelo</th>
+                            <th>Precio transporte</th>
+                            <th>Valor vuelo</th>
+                            <th>Valor transporte</th>
+                            <th>Total</th>`;
+    for (let i = 0; i < ListaCoti.length; i++) {
+      let dest = ListaCoti[i].dest;
+      let dateIni = ListaCoti[i].dateIni;
+      let dateFin = ListaCoti[i].dateFin;
+      let viajeros = ListaCoti[i].viajeros;
+      let vuelo = ListaCoti[i].vuelo;
+      let transporte = ListaCoti[i].transporte;
+      let precioDestino = ListaCoti[i].PRECIODESTINO;
+      let precioVuelo = ListaCoti[i].PRECIOVUELO;
+      let precioTransp = ListaCoti[i].PRECIOTRANS;
+      let valor_vuelo = ListaCoti[i].valor_vuelo;
+      let valor_transporte = ListaCoti[i].valor_transporte;
+      let total = ListaCoti[i].total;
+
+      tasksView.innerHTML += `<table class="tabla6">
+        
+        <tr>
+            <th>${dest}</th>
+            <th>${dateIni}</th>
+            <th>${dateFin}</th>
+            <th>${viajeros}</th>
+            <th>${vuelo}</th>
+            <th>${transporte}</th>
+            <th>${precioDestino}</th>
+            <th>${precioVuelo}</th>
+            <th>${precioTransp}</th>
+            <th>${valor_vuelo}</th>
+            <th>${valor_transporte}</th>
+            <th>${total}</th>
+
+            </tr>
+         
+            </table>`;
+    }
+
+
   }
 }

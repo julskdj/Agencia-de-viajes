@@ -76,6 +76,53 @@
           </ul>
         </div>
 
+        <h1 class="contactenos">Cotiza viaje</h1>
+
+        <form action="" class="formulario" id="formulario-cotizar">
+          <select name="destino" id="dest" class="selects">
+            <option value="Elegir-dest" id="AF">Elegir opción</option>
+            <option value="san-andres">San Andres</option>
+            <option value="cartagena">Cartagena</option>
+          </select>
+        
+          <input class="controls" type="date" name="dateIni" id="dateIni" placeholder="Ingrese la fecha de viaje" alt="Ingrese la fecha de viaje" />
+
+          <input class="controls" type="date" name="dateFin" id="dateFin" placeholder="Ingrese la fecha de retorno" alt="Ingrese la fecha de viaje" />
+        
+          <input class="controls" type="number" name="viajeros" id="viajeros" placeholder="Ingrese cuantas personas agregar al paquete" />
+        
+          <select name="vuelo" id="vuelo" class="selects">
+            <option value="Elegir-vuel" id="AF">Elegir opción</option>
+            <option value="si-vuelo">Si</option>
+            <option value="no-vuelo">No</option>
+          </select>
+
+          <select name="transporte" id="transporte" class="selects">
+            <option value="Elegir-trans" id="AF">Elegir opción</option>
+            <option value="si-trans">Si</option>
+            <option value="no-trans">No</option>
+          </select>
+
+          <div>
+            <button class="botons" onclick="validarFormCotizar()">Enviar</button>
+          </div>
+        </form>
+
+        <div class="sucursalbackground2">
+        
+          <button onclick="ocultarymostrar()" class="botons2">Ocultar/Mostrar</button>
+        
+          <h2 class="h22">Cotizaciones</h2>
+        
+          <div id="Div">
+            <table border="1" class="tabla6" id="tabla6">
+        
+              <th></th>
+        
+            </table>
+          </div>
+        </div>
+
         <div class="tablaconvenios">
 
           <table border="2px">

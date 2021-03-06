@@ -118,6 +118,17 @@ main{
   padding: 10px;
 }
 
+.tabla6 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabla6 tr th{
+  color: white;
+  font-size: 11.5px;
+  padding: 10px;
+}
+
 .sucursalbackground{
   margin-top: 50px;
   background: #202020;
