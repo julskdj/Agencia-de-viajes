@@ -269,7 +269,7 @@ function loginJSON() {
               sesion = `${validar.nombre} ${validar.apellido}`;
               flag = true;
               almacenar = `${validar.rol}`
-              localStorage.setItem("Rol",almacenar);
+              localStorage.setItem("rol",almacenar);
               localStorage.setItem("Sesion", sesion);
               location.href = "../html/usuario.html"
             } else {
