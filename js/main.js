@@ -4,6 +4,8 @@ var temporal
 var obtener = localStorage.getItem("Sesion");
 var probar = 0
 
+var almacenar
+
 botonlogout();
 getLista();
 getListCotizar();
@@ -11,6 +13,10 @@ inicio();
 
 function direccionar() {
   location.href = "../index.html"
+}
+
+function rol(){
+  let alamcen = localStorage.getItem("rol")
 }
 
 function inicio(){
@@ -262,6 +268,8 @@ function loginJSON() {
             if (validar.contraseña == password) {
               sesion = `${validar.nombre} ${validar.apellido}`;
               flag = true;
+              almacenar = `${validar.rol}`
+              localStorage.setItem("Rol",almacenar);
               localStorage.setItem("Sesion", sesion);
               location.href = "../html/usuario.html"
             } else {
@@ -292,6 +300,7 @@ function cerrarSesionButton() {
   localStorage.removeItem("Sesion");
   location.href= "../index.html";
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /*
